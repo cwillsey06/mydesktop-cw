@@ -49,12 +49,12 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *menucmd[]  = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *scrotcmd[] = { "/home/coltrane/.local/bin/scrot.sh", NULL };
+static const char *termcmd[]  = { "st",      NULL };
+static const char *menucmd[]  = { "rofi",    NULL };
+static const char *webcmd[]   = { "firefox", NULL };
+static const char *fmcmd[]    = { "thunar",  NULL };
 
-static const char *termcmd[] = { "st",      NULL };
-static const char *webcmd[]  = { "firefox", NULL };
-static const char *fmcmd[]   = { "pcmanfm", NULL };
+static const char *scrotcmd[] = { "/home/coltrane/.local/bin/scrot.sh", NULL };
 
 static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
 static const char *medianextcmd[] = { "playerctl", "next",       NULL };
@@ -74,8 +74,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_b,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_v,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_c,      movecenter,     {0} },
+	{ MODKEY,                       XK_b,      setmfact,       {.f = -0.05 } },
+	{ MODKEY,                       XK_v,      setmfact,       {.f = +0.05 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
