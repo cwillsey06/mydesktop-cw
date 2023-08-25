@@ -64,18 +64,19 @@ static const char *volupcmd[]   = { "pamixer", "-i", "5", NULL };
 static const char *voldowncmd[] = { "pamixer", "-d", "5", NULL };
 static const char *volmutecmd[] = { "pamixer", "-t",      NULL };
 
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = menucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = fmcmd   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd  } },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = fmcmd   } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_b,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_v,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
@@ -87,7 +88,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_c,      movecenter,     {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -98,13 +98,13 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,        XF86XK_AudioRaiseVolume,       spawn,          {.v = volupcmd     } },
-	{ 0,        XF86XK_AudioLowerVolume,       spawn,          {.v = voldowncmd   } },
-	{ 0,               XF86XK_AudioMute,       spawn,          {.v = volmutecmd   } },
+	{ 0,        XF86XK_AudioRaiseVolume,       spawn,          {.v = volupcmd   } },
+	{ 0,        XF86XK_AudioLowerVolume,       spawn,          {.v = voldowncmd } },
+	{ 0,               XF86XK_AudioMute,       spawn,          {.v = volmutecmd } },
 	{ 0,               XF86XK_AudioPlay,       spawn,          {.v = mediaplaycmd } },
 	{ 0,               XF86XK_AudioNext,       spawn,          {.v = medianextcmd } },
 	{ 0,               XF86XK_AudioPrev,       spawn,          {.v = mediaprevcmd } },
-	{ 0,                       XK_Print,       spawn,          {.v = scrotcmd     } },
+	{ 0,                       XK_Print,       spawn,          {.v = scrotcmd } },
 };
 
 /* button definitions */
