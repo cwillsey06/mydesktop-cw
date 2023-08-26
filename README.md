@@ -2,6 +2,8 @@
 
 If you can even call it that.
 
+install.sh coming soon lol
+
 ## Licensing
 
 dwm and st are developed by the amazing folks @[suckless.org](https://suckless.org/)  
