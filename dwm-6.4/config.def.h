@@ -48,7 +48,7 @@ static const char *menucmd[]  = { "rofi",    NULL };
 static const char *webcmd[]   = { "firefox", NULL };
 static const char *fmcmd[]    = { "thunar",  NULL };
 
-static const char *scrotcmd[] = { "/home/coltrane/.local/bin/scrot.sh", NULL };
+static const char *scrotcmd[] = { "scrot.sh", NULL };
 
 static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
 static const char *medianextcmd[] = { "playerctl", "next",       NULL };
