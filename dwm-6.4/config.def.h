@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2; /* border pixel of windows */
+static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 8; /* snap pixel */
 static const int showbar            = 0; /* 0 means no bar */
 static const int topbar             = 0; /* 0 means bottom bar */
@@ -35,7 +36,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "><>",      NULL },
-	{ "=[]",      tile },
+	{ "[]=",      tile },
 };
 
 /* key definitions */
@@ -73,8 +74,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_c,      movecenter,     {0} },
-	{ MODKEY,                       XK_b,      setmfact,       {.f = -0.05 } },
-	{ MODKEY,                       XK_v,      setmfact,       {.f = +0.05 } },
+	{ MODKEY,                       XK_b,      setmfact,       {.f = +0.05 } },
+	{ MODKEY,                       XK_v,      setmfact,       {.f = -0.05 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
@@ -87,6 +88,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = GAP_RESET } },
+	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = GAP_TOGGLE} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
