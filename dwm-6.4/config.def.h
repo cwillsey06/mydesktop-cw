@@ -6,7 +6,7 @@
 static const unsigned int borderpx  = 2; /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 8; /* snap pixel */
-static const int showbar            = 0; /* 0 means no bar */
+static const int showbar            = 1; /* 0 means no bar */
 static const int topbar             = 0; /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenu_font[]      = "monospace:size=10";
@@ -53,10 +53,10 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *termcmd[]  = { "st",        NULL };
-static const char *menucmd[]  = { "dmenu_run", NULL };
-static const char *webcmd[]   = { "firefox",   NULL };
-static const char *fmcmd[]    = { "thunar",    NULL };
+static const char *termcmd[]  = { "st",              NULL };
+static const char *menucmd[]  = { "dmenu_run", "-b", NULL };
+static const char *webcmd[]   = { "firefox",         NULL };
+static const char *fmcmd[]    = { "thunar",          NULL };
 
 static const char *spcmd[]    = { "st", "-t", "scratchpad", "-g", "120x34", NULL };
 static const char *scrotcmd[] = { "scrot.sh", NULL };
