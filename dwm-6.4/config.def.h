@@ -56,6 +56,7 @@ static const char *menucmd[]  = { "dmenu_run", NULL };
 static const char *webcmd[]   = { "firefox",   NULL };
 static const char *fmcmd[]    = { "thunar",    NULL };
 
+static const char *spcmd[]    = { "st", "-t", "scratchpad", "-g", "120x34", NULL };
 static const char *scrotcmd[] = { "scrot.sh", NULL };
 
 static const char *mediaplaycmd[] = { "playerctl", "play-pause", NULL };
@@ -73,6 +74,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = fmcmd   } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd  } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = spcmd   } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
