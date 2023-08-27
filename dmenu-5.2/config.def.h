@@ -28,6 +28,9 @@ static const char *colors[SchemeLast][2] = {
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines = 0;
 
+/* Size of the window border */
+static unsigned int border_width = 0;
+
 /* Characters not considered part of a word while deleting words */
 static const char worddelimiters[] = " "; /* example: " /?\"&[]" */
 
