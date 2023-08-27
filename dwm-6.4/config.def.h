@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *menucmd[]  = { "dmenu_run", "-b", "-bw", "2", "-x", "10", "-y", "25", "-z", "250", "-l", "24", NULL };
+static const char *menucmd[]  = { "dmenu_run", "-b", "-p", "</>", "-bw", "2", "-x", "10", "-y", "27", "-z", "250", "-l", "24", NULL };
 static const char *termcmd[]  = { "st",      NULL };
 static const char *webcmd[]   = { "firefox", NULL };
 static const char *fmcmd[]    = { "thunar",  NULL };
