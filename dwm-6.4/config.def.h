@@ -6,10 +6,14 @@ static const unsigned int snap      = 8; /* snap pixel */
 static const int showbar            = 0; /* 0 means no bar */
 static const int topbar             = 0; /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
+static const char dmenu_font[]      = "monospace:size=10";
+static const char col_nord0[]       = "#2E3440";
+static const char col_nord6[]       = "#ECEFF4";
+static const char col_nord8[]       = "#88C0D0";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { "#ECEFF4", "#2E3440", "#2E3440" },
-	[SchemeSel]  = { "#2E3440", "#88C0D0", "#2E3440" },
+	[SchemeNorm] = { col_nord6, col_nord0, col_nord0 },
+	[SchemeSel]  = { col_nord0, col_nord8, col_nord0 },
 };
 
 /* tagging */
@@ -44,7 +48,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { "st",      NULL };
-static const char *menucmd[]  = { "rofi",    NULL };
+static const char *menucmd[]  = { "dmenu_run", "-fn", dmenu_font, "-nb", col_nord0, "-nf", col_nord6, "-sb", col_nord8, "-sf", col_nord0, NULL };
 static const char *webcmd[]   = { "firefox", NULL };
 static const char *fmcmd[]    = { "thunar",  NULL };
 
