@@ -3,5 +3,7 @@
 *.orig
 *.rej
 config.h
+dmenu
+stest
 dwm
 st

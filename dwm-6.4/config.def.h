@@ -47,10 +47,10 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *termcmd[]  = { "st",      NULL };
-static const char *menucmd[]  = { "dmenu_run", "-fn", dmenu_font, "-nb", col_nord0, "-nf", col_nord6, "-sb", col_nord8, "-sf", col_nord0, NULL };
-static const char *webcmd[]   = { "firefox", NULL };
-static const char *fmcmd[]    = { "thunar",  NULL };
+static const char *termcmd[]  = { "st",        NULL };
+static const char *menucmd[]  = { "dmenu_run", NULL };
+static const char *webcmd[]   = { "firefox",   NULL };
+static const char *fmcmd[]    = { "thunar",    NULL };
 
 static const char *scrotcmd[] = { "scrot.sh", NULL };
 
