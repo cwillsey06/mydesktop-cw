@@ -58,10 +58,10 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* commands */
-static const char *termcmd[]  = { "st",              NULL };
-static const char *menucmd[]  = { "dmenu_run", "-b", NULL };
-static const char *webcmd[]   = { "firefox",         NULL };
-static const char *fmcmd[]    = { "thunar",          NULL };
+static const char *menucmd[]  = { "dmenu_run", "-b", "-bw", "2", "-x", "10", "-y", "25", "-z", "250", "-l", "24", NULL };
+static const char *termcmd[]  = { "st",      NULL };
+static const char *webcmd[]   = { "firefox", NULL };
+static const char *fmcmd[]    = { "thunar",  NULL };
 
 static const char *spcmd[]    = { "st", "-t", "scratchpad", "-g", "120x34", NULL };
 static const char *scrotcmd[] = { "scrot.sh", NULL };
@@ -78,9 +78,9 @@ static const char *volmutecmd[] = { "pamixer", "-t",      NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = menucmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = fmcmd   } },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd  } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd  } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = fmcmd   } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = spcmd   } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
